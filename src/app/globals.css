@@ -2,20 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer components {
+  .container-main {
+    @apply bg-gradient-to-br to-purple-700 font-sans from-green-600 text-white;
   }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  .form {
+    @apply flex flex-col gap-4 bg-gray-200 text-black p-10 rounded-md shadow-2xl;
+  }
+  .case-form {
+    @apply flex flex-col text-lg font-normal;
+  }
+  .input-form {
+    @apply flex w-[20rem] h-[2rem] text-black rounded-md gap-4 pl-2 border-neutral-400 border;
+  }
+  .error-form {
+    @apply text-red-700 text-sm text-end;
+  }
+  .button-form {
+    @apply bg-green-600 text-white text-center items-center justify-center mt-4 p-2 m-auto w-[20rem] rounded-lg font-semibold hover:bg-green-700;
+  }
 }
